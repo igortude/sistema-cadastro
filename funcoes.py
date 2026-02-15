@@ -156,8 +156,6 @@ def atualizar_usuario():
         except ValueError:
             print('É necessário ID válido. Tente novamente.')
         
-    # tenho que pegar o id_para_alterar e enviar para a query
-
     conn = sqlite3.connect('portfolio2.db')
     cursor = conn.cursor()
 
