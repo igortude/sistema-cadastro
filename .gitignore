@@ -1,0 +1,8 @@
+# Cache Python
+__pycache__/
+
+# Unecessary Files
+index.html
+exerc.py
+criar_banco.py
+run_queries.py
