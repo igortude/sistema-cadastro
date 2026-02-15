@@ -37,4 +37,4 @@ cadastro_simples/
 
 ## Como executar
 1. Clone o repositório
-2. Execute `python main.py`
+2. Execute `python main.py` 
