@@ -2,6 +2,7 @@ from funcoes import (
     del_data,
     list_users,
     cadastrar,
+    atualizar_usuario,
     simple_list
 )
 
@@ -10,15 +11,19 @@ print("CADASTRO BÁSICO - SCRIPT PYTHON")
 print("==========================================")
 
 
-print("Para cadastrar, insira: 'cadastro\n'")
+print("Para cadastrar, insira: 'cadastro'\n")
 print("Para ver cadastros já feitos, insira: 'listar'\n")
+print("Para atualizar os dados de um usuário, basta digitar 'atualizar'\n")
 print("Para deletar algum usuário já cadastro, insira: 'deletar'\n")
+
 
 lista = input("Sua opção: ")
 
 if lista.startswith('lis'):
     list_users()
     print("\n")
+elif lista.startswith('atu'):
+    atualizar_usuario()
 elif lista.startswith('del'):
     simple_list(),
     print("\nInsira o ID do usuário a ser deletado abaixo")

@@ -7,3 +7,4 @@
 -- Total de cadastrados
 SELECT COUNT(*) AS Cadastros FROM usuarios;
 
+.schema usuarios

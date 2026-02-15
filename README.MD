@@ -22,7 +22,7 @@ O objetivo foi aprender de verdade, não só fazer funcionar.
 - [x] Exclusão de usuário por ID com verificação (`rowcount`)  
 - [x] Listagem de usuários
 - [x] Trativa de Erros try,except  
-- [ ] Edição de cadastro  
+- [x] Edição de cadastro  
 - [ ] Relatórios com pandas + gráficos  
 - [ ] Dashboard com Streamlit (próximos passos)
 

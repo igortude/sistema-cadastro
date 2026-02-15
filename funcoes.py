@@ -131,12 +131,62 @@ def simple_list():
     conn = sqlite3.connect('portfolio2.db')
     cursor = conn.cursor()
 
-    query="""
-    SELECT id, nome, sobrenome FROM usuarios
-"""
+    query=""" SELECT id, nome, sobrenome FROM usuarios """
     cursor.execute(query)
     user_list = cursor.fetchall()
     for user_id, nome, ult_nome in user_list:
         print(f"ID: {user_id} | Nome: {nome} {ult_nome}")
 
     conn.close()
+
+def atualizar_usuario():
+    
+    print('=' * 30)
+    print('Lista para Atualização')
+    print('=' * 30)
+
+    simple_list()
+
+    print('-' * 30)
+
+    while True:
+        try:
+            id_para_alterar = int(input('Insira o ID para alteração: '))
+            break
+        except ValueError:
+            print('É necessário ID válido. Tente novamente.')
+        
+    # tenho que pegar o id_para_alterar e enviar para a query
+
+    conn = sqlite3.connect('portfolio2.db')
+    cursor = conn.cursor()
+
+    query= """ SELECT * FROM usuarios WHERE id = ? """
+
+    cursor.execute(query, (id_para_alterar))
+    dados1 = cursor.fetchone()
+
+    print(f"Dados atuais ID {id_para_alterar}: {dados1}")
+
+    p1 = input('O que gostaria de alterar?').lower()
+    novo_valor = input('Insira o novo valor: ')
+
+    if p1.startswith('nom'):
+        query2 = "UPDATE usuarios SET nome=? WHERE id=?"
+    elif p1.startswith('sobr'):
+        query2 = "UPDATE usuarios SET sobrenome=? WHERE id=?"
+    elif p1.startswith('ida'):
+        query2 = "UPDATE usuarios SET idade=? WHERE id=?"
+    else:
+        query2 = "UPDATE usuarios SET profissao=? WHERE id=?"
+
+    cursor.execute(query2, (novo_valor, id_para_alterar))
+    if cursor.rowcount == 1:
+        print("Atualizado com sucesso!")
+    else:
+        print("Nenhuma modificação foi realizada.")
+
+    conn.commit()
+    conn.close()
+
+    print('Cadastro atualizado com sucesso.')
