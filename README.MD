@@ -34,3 +34,7 @@ cadastro_simples/
 ├── portfolio2.db → banco de dados SQLite (gerado automaticamente)
 ├── run_queries.sql → suas queries de análise 
 └── README.md → este arquivo
+
+## Como executar
+1. Clone o repositório
+2. Execute `python main.py`
